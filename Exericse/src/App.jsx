@@ -1,14 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import TestProps from "./components/TestProps";
+import  users from "/public/userData"
+import useCounter from "./components/useCounter"
+import User  from "./components/User";
+import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isAdmin ,setAdmin]=useState(false);
+  const {counter, increment, decrement} = useCounter();
 
+ const isvalid=false;
+const handleType=()=>{
+
+  setAdmin((p)=>!p)
+  alert ("UserType changed well");
+}
   return (
     <>
+           <div>
+      <h1>{counter}</h1>
+      <button onClick={increment}>+</button>
+      <button onClick={decrement}>-</button>
+
        
+     { isAdmin && isvalid&&
+      users.map((e,i)=>{
+        return (
+          <div key={i}>
+            <User  name={e.name} age={e.age}></User>
+          </div>
+        )
+      })
+     }
+    </div>
+    <button onClick={handleType}>ChangeType</button>
     </>
   )
 }
