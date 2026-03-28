@@ -3,6 +3,8 @@ import  users from "/public/userData"
 import useCounter from "./components/useCounter"
 import User  from "./components/User";
 import { useState } from "react";
+import UseThatEff from "./components/UseEffect";
+import FetchLogic from "./components/FetchLogic";
 
 function App() {
   const [isAdmin ,setAdmin]=useState(false);
@@ -20,6 +22,9 @@ const handleType=()=>{
       <h1>{counter}</h1>
       <button onClick={increment}>+</button>
       <button onClick={decrement}>-</button>
+
+      <UseThatEff/>
+      <FetchLogic/>
 
        
      { isAdmin && isvalid&&
