@@ -16,6 +16,7 @@ const handleType=()=>{
   setAdmin((p)=>!p)
   alert ("UserType changed well");
 }
+
   return (
     <>
            <div>
