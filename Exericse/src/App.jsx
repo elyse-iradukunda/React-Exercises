@@ -6,6 +6,7 @@ import { useState } from "react";
 import UseThatEff from "./components/UseEffect";
 import FetchLogic from "./components/FetchLogic";
 import Counter from "./components/useReducer";
+import Employees from "./components/customHookCreation";
 
 function App() {
   const [isAdmin ,setAdmin]=useState(false);
@@ -44,6 +45,8 @@ const handleType=()=>{
 
 
     <Counter/>
+
+     <Employees/>
     </>
   )
 }
