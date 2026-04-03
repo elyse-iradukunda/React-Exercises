@@ -8,6 +8,7 @@ import FetchLogic from "./components/FetchLogic";
 import Counter from "./components/useReducer";
 import Post from "./components/Post";
 import ToggleButtons from "./components/ToggleButtons";
+import TransferNames from "./components/TransferNames";
 
 function App() {
   const [isAdmin ,setAdmin]=useState(false);
@@ -22,6 +23,10 @@ const handleType=()=>{
 
   return (
     <>
+
+
+
+    <TransferNames/>
 
   <ToggleButtons/>
 

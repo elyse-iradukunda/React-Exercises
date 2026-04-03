@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function ToggleButtons(){
      
-    
+
     const [buttons,setButtons] =useState( Array(5).fill("blue"));
 
     const toggleColor=(index)=>{
@@ -19,7 +19,8 @@ export default function ToggleButtons(){
            buttons.map((e,i)=>{
                 return(
                     <button
-                    style={{backgroundColor:e}}
+                    key={i}
+                    style={{ backgroundColor:e, padding: '10px', margin: '5px', border: 'none' }}
                     onClick={()=>toggleColor(i)}
                     >Button :{i+1}</button>
                 )
