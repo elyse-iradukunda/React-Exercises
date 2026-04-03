@@ -9,6 +9,15 @@ import Counter from "./components/useReducer";
 import Post from "./components/Post";
 import ToggleButtons from "./components/ToggleButtons";
 import TransferNames from "./components/TransferNames";
+import ToggleCards from "./components/ToggleCards";
+
+
+
+import  { Suspense, lazy } from "react";
+
+const HeavyPage = lazy(() => import("../src/heavy"));
+
+
 
 function App() {
   const [isAdmin ,setAdmin]=useState(false);
@@ -25,6 +34,9 @@ const handleType=()=>{
     <>
 
 
+
+
+  <ToggleCards/>
 
     <TransferNames/>
 
