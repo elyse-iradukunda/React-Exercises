@@ -28,8 +28,13 @@ export default function useFetch(api){
           setLoading(false);
         }
       }
-    
+
+      
+     useEffect(()=>{
+    getData();
+ },[])
     
 return {data,error,loading}
+
 
 }

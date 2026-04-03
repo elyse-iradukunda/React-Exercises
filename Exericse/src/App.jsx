@@ -6,6 +6,8 @@ import { useState } from "react";
 import UseThatEff from "./components/UseEffect";
 import FetchLogic from "./components/FetchLogic";
 import Counter from "./components/useReducer";
+import Post from "./components/Post";
+import ToggleButtons from "./components/ToggleButtons";
 
 function App() {
   const [isAdmin ,setAdmin]=useState(false);
@@ -20,6 +22,12 @@ const handleType=()=>{
 
   return (
     <>
+
+  <ToggleButtons/>
+
+
+
+
            <div>
       <h1>{counter}</h1>
       <button onClick={increment}>+</button>
@@ -44,6 +52,11 @@ const handleType=()=>{
 
 
     <Counter/>
+
+   <Post/>
+
+
+
 
 
     </>
