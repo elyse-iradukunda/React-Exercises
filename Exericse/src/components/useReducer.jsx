@@ -22,3 +22,8 @@ export default function Counter(){
      )
 
 }
+
+// step 1: import useReducer() and create reducer
+// step 2: define my reducer  with increment and decrement withing reducer function 
+// step 3: pass defined reducer into useReducer Hook with initial state of 0
+// step 4: create dispath function with those reducers that I have made.
