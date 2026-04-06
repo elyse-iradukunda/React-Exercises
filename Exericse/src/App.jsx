@@ -14,6 +14,7 @@ import ToggleCards from "./components/ToggleCards";
 
 
 import  { Suspense, lazy } from "react";
+import ToggleWords from "./components/ToggleWords";
 
 const HeavyPage = lazy(() => import("../src/heavy"));
 
@@ -33,7 +34,7 @@ const handleType=()=>{
   return (
     <>
 
-
+<ToggleWords/>
 
 
   <ToggleCards/>

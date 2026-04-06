@@ -2,8 +2,6 @@ import { use, useState } from "react"
 export default function ToggleCards(){
    
     const [limit,setLimit]= useState(4);
-
-
     const cardsData = [
   { id: 1, title: 'Card 1', description: 'This is the description for Card 1.' },
   { id: 2, title: 'Card 2', description: 'This is the description for Card 2.' },
@@ -14,31 +12,24 @@ export default function ToggleCards(){
   { id: 7, title: 'Card 7', description: 'This is the description for Card 7.' },
   { id: 8, title: 'Card 8', description: 'This is the description for Card 8.' },
 ]
-
-
-
-
     return (
         <>
-         <h1>cards</h1>
-          <ul className="cards">
-          {cardsData.slice(0,limit).map((element)=>{
-              return(
-                 <li key={element.id} className="card">
-                    <div>
-                     <h1>cardId: {element.id}</h1>    
-                     <h2>Title: {element.title}</h2>    
-                     <h3>Description: {element.description}</h3>      
-                    </div>
-                 </li>
-              ) 
-          })
-
-          }
-
-          <button onClick={()=> setLimit(cardsData.length)} >Show more</button>
-          <button  onClick={()=> setLimit(4)} >Show less</button>
-         </ul> 
+            <h1>card</h1> 
+             <ul className="cards">
+                   
+                  { cardsData.slice(0,limit).map((elm,i)=>{
+                     return(
+                     <div>
+                        <li key={i}>{elm.id}</li>
+                        <li key={i}>{elm.title}</li>
+                        <li key={i}>{elm.description}</li>
+                      </div>
+                     )
+                  })
+                  }
+             </ul>
+             <button onClick={()=> setLimit(4)}>show less</button>
+             <button onClick={()=> setLimit(cardsData.length)} >show more</button>
         </>
     )
 }

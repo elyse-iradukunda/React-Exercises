@@ -12,8 +12,6 @@ import { useEffect, useState } from "react";
          const firstName = initialNames[0];
          setInitialNames(initialNames.slice(1))
          setTransferedNames((prev)=>[firstName,...prev])
-          
-        
         },2000)
       
 
