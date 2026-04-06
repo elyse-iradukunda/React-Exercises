@@ -19,7 +19,7 @@ export default function ToggleCards(){
                    
                   { cardsData.slice(0,limit).map((elm,i)=>{
                      return(
-                     <div>
+                     <div key={i}>
                         <li key={i}>{elm.id}</li>
                         <li key={i}>{elm.title}</li>
                         <li key={i}>{elm.description}</li>

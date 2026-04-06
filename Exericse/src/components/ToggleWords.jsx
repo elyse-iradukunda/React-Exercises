@@ -1,23 +1,36 @@
 import { useState } from "react";
 
+export default function App() {
 
+  const [names, setNames] = useState(["Alice", "Bob", "Charlie"]);
 
+  function handleDelete(index){
 
+     setNames(names.filter((_,elm)=> elm != index));
+  }
 
-function ToggleWords(props) {
+  function handleAddName(e){
 
- const [current,setCurrent]=useState(true);
-function handleWords(){
- return current === true ? "show":"hide"
+    e.preventDefault()
+      
+       const newName = e.target.AddName.value;
+      setNames([...names,newName]);
+  }
+
+  return (
+    <div>
+      <ul>
+        {names.map((name, i) => (
+          <li key={i}>
+            {name}
+            <button onClick={() => handleDelete(i)}>Delete</button>
+          </li>
+        ))}
+      </ul>
+   <form  onSubmit={handleAddName}>
+       <input type="text"  placeholder="add New name"  name="AddName" />
+       <button>Add Name</button>
+   </form>
+    </div>
+  );
 }
-
-    return (
-        <div>
-             <p>{handleWords()}</p>
-             <button type="button" onClick={()=>{setCurrent(false)}}>Change</button>
-             <button type="button" onClick={()=>{setCurrent(true)}}>Change</button>
-        </div>
-    );
-}
-
-export default ToggleWords;
